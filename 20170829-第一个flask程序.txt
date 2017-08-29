@@ -1,0 +1,26 @@
+#encoding: utf-8
+#上边的一句，是让其能够识别中文，更换编码方式（默认编码方式为ascii）
+
+#从flask这个框架中导入Flask这个类
+from flask import Flask
+
+#初始化一个Flask对象
+#Flask（）
+#需要传递一个参数 __name__
+#参数的作用：方便flask框架寻找资源；方便flask插件比如Flask-Sqlalchemy出现错误的时候，去寻找问题存在的位置
+app = Flask(__name__)
+
+
+#@app.route是一个装饰器
+#@开头，并且在函数的上面，说明是装饰器
+#这个装饰器的作用，是做一个url与视图函数的映射
+#127.0.0.1:5000/  -> 去请求hello-world这个函数，然后将结果返回给浏览器
+@app.route('/')
+def hello_world():
+    return 'Hello World!'
+
+
+#如果当前这个文件是作为入口程序运行，那么就执行app.run()
+if __name__ == '__main__':
+    #启动一个应用服务器，来接收用户的请求。相当于一个循环，一直在监听状态
+    app.run()

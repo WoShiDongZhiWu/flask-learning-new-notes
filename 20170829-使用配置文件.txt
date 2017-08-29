@@ -1,0 +1,6 @@
+使用配置文件
+1.新建一个‘config.py’文件
+2.在主app文件中导入这个文件，并且配置到‘app’中，示例代码如下
+ 	import config
+	app.config.from_object(config)
+3.还有很多参数，都是放在这个配置文件中，比如‘SECRET_KEY’和‘SQLALCHEMY’

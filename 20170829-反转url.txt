@@ -1,0 +1,19 @@
+反转url：
+1.什么叫做反转URL：从视图函数到url的转换叫做反转url
+2.反转URL的用处：
+·在页面重定向的时候，会使用url反转
+·在模板（html）中，也会使用url反转，比如点击登陆后跳转到登陆页面
+
+示例代码如下：
+
+#导入url_for
+from flask import Flask,url_for
+
+@app.route('/')
+def index():
+       #获取my_List函数的url，即‘/List/’
+       print url_for('my_List')
+
+@app.route('/List/')
+def my_List():
+       return 'List'
