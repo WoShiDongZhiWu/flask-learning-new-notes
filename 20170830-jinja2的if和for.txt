@@ -1,0 +1,19 @@
+1.jinja2的if判断
+ 
+{% if xxx %}
+       xxxxxxx
+{% else %}
+       xxxxxxx
+{% endif %}
+
+2. for循环遍历列表和字典
+1. 字典的遍历、语法和‘python’一样
+
+{% for k,v in user.items()  %}
+         <p>{{  k  }}:{{  v  }}</p>
+{% end for  %}
+
+3.  列表的遍历：语法和‘python’一样
+{% for website in websites  %}
+         <p>{{ website  }}</p>
+{% end for  %}
