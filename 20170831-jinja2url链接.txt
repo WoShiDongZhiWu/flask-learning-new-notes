@@ -1,0 +1,10 @@
+url链接：使用url_for,反转成url，实现页面跳转
+
+加载静态文件
+
+1.语法：‘url_for('static',filename = '路径')’
+2.可以加载css，js，img文件
+
+<link rel="stylesheet" href="{{ url_for('static',filename='css/index.css') }}">
+<script src="{{ url_for('static',filename='js/index.js') }}" /script>
+<img src="{{ url_for('static',filename='images/xxx.png') }}" alt="">

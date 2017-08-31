@@ -1,0 +1,14 @@
+flask的jinja2模板继承和block
+1.继承的作用和语法
+·作用：可以将公共的代码放在父模板中，避免每个模板写同样的代码
+·语法：(base.html为父模板，在子模版中加下边的一句，实现继承)
+ 	{% extends 'base.html' %}
+
+2.block实现（除去继承的内容外，在子模版中写各自的内容）
+·作用：子模版实现自己的需求，父模板需要在对应位置提前定义
+{%   block main  %}
+{%   endblock     %}
+·子模版中的内容写在block中
+{%   block main  %}
+           xxxxx
+{%   endblock     %}
