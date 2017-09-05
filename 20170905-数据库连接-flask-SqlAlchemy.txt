@@ -1,0 +1,27 @@
+数据库连接-flask-SQLAlchemy的使用
+1.初始化和设置数据库配置信息
+·使用falsk_sqlalchemy中的SQLAlchemy进行初始化
+	from flask_sqlalchemy imprt SQLAlchemy
+	app = Flask(__name__)
+	db = SQLAlchemy(app)
+2.设置配置信息：在'config.py'文件中添加以下配置信息
+
+# 配置数据库连接
+DIALECT = 'postgresql'
+DRIVER = ''
+USERNAME = ‘’
+PASSWORD = ''
+HOST = ‘’
+PORT = ‘’
+DATABASE = ‘’
+
+SQLALCHEMY_DATABASE_URI = "{}://{}:{}@{}:{}/{}".format(DIALECT, USERNAME, PASSWORD, HOST, PORT, DATABASE)
+
+SQLALCHEMY_TRACK_MODIFICATIONS = False
+3.在主‘app’文件中，添加配置文件
+
+	import config
+	app.config.from_object(config)
+4.做测试，看有没有问题
+	db.creat_all()
+·若没有报错，说明配置没有问题；若报错，修改

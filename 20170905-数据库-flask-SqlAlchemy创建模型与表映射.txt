@@ -1,0 +1,44 @@
+数据库-模型映射表创建-增删查改-flask-SQLAlchemy的使用
+
+·模型映射表创建
+
+# 在数据库中新建一个表。创建表模型，新建一个类
+class Article(db.Model):
+    # 表名 article
+    __tablename__ = 'article'
+    # 在表中新建3个字段，，id，title，content
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    title = db.Column(db.String(100), nullable=False)
+    content = db.Column(db.Text, nullable=False)
+# 将表模型真正地创建到数据库中
+db.create_all()
+
+·数据库增删查改
+    # 数据库操作
+    # # 增加记录
+    # article1 = Article(title='aba', content='ccc')
+    # db.session.add(article1)
+    # # 事务，提交,增加完成
+    # db.session.commit()
+
+    # # 查找
+    # # sql语句为select * from article where article.title='aba'
+    # article1 = Article.query.filter(Article.title == 'aba').first()
+    # print 'title:%s' % article1.title
+    # print 'content:%s' % article1.content
+
+    # # 修改数据
+    # # 1.查找要修改的数据
+    # article1 = Article.query.filter(Article.title == 'aba').first()
+    # # 2.修改数据
+    # article1.title = 'new title'
+    # # 3.提交事务
+    # db.session.commit()
+
+    # 删除数据
+    # 1.把需要删除的数据查找出来
+    article1 = Article.query.filter(Article.title == 'new title').first()
+    # 2.把这条数据删除掉
+    db.session.delete(article1)
+    # 3.提交事务
+    db.session.commit()
