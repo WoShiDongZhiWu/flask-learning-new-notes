@@ -1,0 +1,5 @@
+flask-SQLAlchemy的介绍与安装
+1.ORM：Object Relationship Mapping，模型关系映射
+2.flask-sqlalchemy是一套ORM框架
+3.ORM的好处：将一个表抽象成一个类，一条数据抽象成该类的一个对象
+
