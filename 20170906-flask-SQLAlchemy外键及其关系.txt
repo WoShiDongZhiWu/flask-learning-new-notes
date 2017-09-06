@@ -1,0 +1,17 @@
+flask-SQLAlchemy外键及其关系
+# 用户表
+class User(db.Model):
+    __tablename__ ='user'
+    id = db.Column(db.Integer, primary_key =True, autoincrement = True )
+    username = db.Column(db.String(100),nullable = False)
+# 文章表
+class Article(db.Model):
+    __tablename__ = 'article'
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    title = db.Column(db.String(100), nullable=False)
+    content = db.Column(db.Text, nullable=False)
+    # 定义外键，与User表的id保持一致
+    author_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    # 方法二：①设置关系：添加一个属性，可以访问User的数据，像访问普通模型一样
+    # ‘backref’定义反向引用，可以通过‘User’访问相应的Article模型
+    author = db.relationship('User', backref=db.backref('articles'))
