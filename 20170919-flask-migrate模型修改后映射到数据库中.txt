@@ -1,0 +1,9 @@
+Flask-Migrate的介绍-需要在终端操作
+1.介绍：因为采用'db.create_all'在后期修改字段的时候，不会自动的映射到数据库中，必须删除表，然后重新运行'db.create_all'才会重新映射，这样不符合我们的需求。因此flask-migrate就是为了解决这个问题，她可以在每次修改模型后，可以将修改的东西映射到数据库中。
+2.使用falsk_migrate必须借助flask_script
+3.'flask_migrate'相关的命令：
+    *'python manage.py db init':初始化一个迁移脚本的环境
+    *‘python manage.py db migrate’:将模型生成迁移文件，只要模型更改了，就需要执行一遍这个命令
+   * ‘python manage.py db upgrade’：将迁移文件真正映射到数据库中。每次运行了‘migrate’命令后，就记得要运行这个命令。
+4.注意点：需要将你想要映射到数据库的模型都要导入到‘manage.py’文件中，如果没有导入进去，就不会i映射到数据库中。
+5.‘manage.py’的相关代码
