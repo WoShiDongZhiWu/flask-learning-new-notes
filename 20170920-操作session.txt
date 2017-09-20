@@ -1,0 +1,9 @@
+操作session：
+1.session的操作方式：
+·使用session需要从flask中导入session，所有和session相关的操作都是通过这个变量
+·使用session需要设置SECRET_KEY，用来作为加密使用。并且这个SECRET_KEY，如果每次服务器启动后都变化的话，之前的session就不能通过这个KEY来解密了
+·操作session，与操作字典一样
+·添加session：session['username']
+·删除session：session.pop('username')或者del session['username']
+·清除所有session：session.clear()
+·获取session：session.get('username')

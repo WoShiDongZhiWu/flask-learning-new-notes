@@ -1,0 +1,3 @@
+ flask中的session机制：把敏感数据加密后放到session中，然后把session存放到cookie中。下次请求时，再从浏览器发送过来的cookie中读取session，然后再从session中读取敏感数据，并进行解密，获取用户数据。
+2.flask的这种session机制可以节省服务器的开销，因为所有信息都存储到了客户端
+3.安全是相对的，把session放到cookie中，经过加密，也是比较安全的。
