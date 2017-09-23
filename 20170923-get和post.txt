@@ -1,0 +1,13 @@
+get请求和post请求
+1.get请求
+    ·使用场景：只从服务器获取数据，并没有对服务器产生影响，这时候使用get
+    ·传参：get请求传参是放在url中，并且是通过‘？’的方式来指定key和value
+2.post请求
+·使用场景：如果要对服务器产生影响，使用post请求
+·传参：post请求传参不是放在url中，是通过‘from data’的形式发送给服务器的
+
+###get请求和post请求获取参数
+1.get请求        通过“request.args”获取
+2.post请求      通过"request.form"获取
+3.post请求需要注意的几点：
+   form中，在用post方式时，需要在路径中写明method = post,默认为get方式，并且要指定action='/login/'
