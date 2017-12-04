@@ -10,15 +10,15 @@ DIALECT = 'postgresql'
 # 驱动
 DRIVER = ''
 # 用户名
-USERNAME = 'postgres'
+USERNAME = ''
 # 密码
-PASSWORD = 'wudong510015'
+PASSWORD = ''
 # 服务器地址
-HOST = 'localhost'
+HOST = ''
 # 端口号，在数据库中可以设置
-PORT = '5432'
+PORT = ''
 # 数据库名称
-DATABASE = 'postgres'
+DATABASE = ''
 # 连接数据库
 SQLALCHEMY_DATABASE_URI = "{}://{}:{}@{}:{}/{}".format(DIALECT, USERNAME, PASSWORD, HOST, PORT, DATABASE)
 
