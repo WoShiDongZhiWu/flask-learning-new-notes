@@ -6,7 +6,7 @@ DEBUG = True
 SECRET_KEY = os.urandom(24)
 
 
-DIALECT = ''
+DIALECT = ' '
 # 驱动
 DRIVER = ''
 # 用户名
