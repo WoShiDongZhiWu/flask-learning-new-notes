@@ -2,6 +2,28 @@
 
 {% block title %}首页{% endblock %}
 
+<%{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static',filename = 'css/index.css') }}">
+{% endblock %}
+
 {% block main %}
-    首页
+    <ul class="question-list-group">
+        {% for question in questions %}
+            <li>
+            <div class="avatar-group">
+                <img width="38px" src="{{ url_for('static',filename='images/dis.png') }}" alt="" class="avatar">
+            </div>
+            <div class="question-group">
+                <p class="question-title"><a href="{{ url_for('detail',question_id=question.id) }}">{{ question.title }}</a></p>
+                <p class="question-content">{{ question.content }}</p>
+            </div>
+            <div class="question-info">
+                <span class="question-author">{{ question.author.uesrname }}</span>
+                 <span class="question-">{{ question.create_time }}</span>
+            </div>
+        </li>
+        {% endfor %}
+
+
+    </ul>
 {% endblock %}

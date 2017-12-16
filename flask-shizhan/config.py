@@ -6,19 +6,19 @@ DEBUG = True
 SECRET_KEY = os.urandom(24)
 
 
-DIALECT = ''
+DIALECT = 'postgresql'
 # 驱动
 DRIVER = ''
 # 用户名
-USERNAME = ''
+USERNAME = 'postgres'
 # 密码
-PASSWORD = ''
+PASSWORD = 'wudong510015'
 # 服务器地址
-HOST = ''
+HOST = 'localhost'
 # 端口号，在数据库中可以设置
-PORT = ''
+PORT = '5432'
 # 数据库名称
-DATABASE = ''
+DATABASE = 'DEMO_shizhan'
 # 连接数据库
 SQLALCHEMY_DATABASE_URI = "{}://{}:{}@{}:{}/{}".format(DIALECT, USERNAME, PASSWORD, HOST, PORT, DATABASE)
 

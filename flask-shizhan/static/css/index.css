@@ -1,0 +1,25 @@
+ul{
+    list-style: none;
+    padding-left: 0;
+}
+ul li{
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+}
+.avatar-group{
+    width: 38px;
+    height: 100% ;
+    float: left;
+}
+.avatar-group.avatar{
+    width: 38px;
+    height:38px;
+
+}
+.question-group{
+    float: left;
+    width: 660px;
+}
+.question-info {
+    text-align: right;
+}
